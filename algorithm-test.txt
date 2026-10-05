@@ -1,0 +1,23 @@
+FUNCTION findMaxInMin(arr, ukuran)
+    IF ukuran bukan integer OR ukuran < 1 OR ukuran > LENGTH(arr)
+        RETURN ERROR "Ukuran kelompok tidak valid"
+    END IF
+
+    hasil ← NEGATIVE_INFINITY
+
+    FOR awal ← 0 TO LENGTH(arr) - ukuran
+        minimum ← arr[awal]
+
+        FOR posisi ← awal + 1 TO awal + ukuran - 1
+            IF arr[posisi] < minimum
+                minimum ← arr[posisi]
+            END IF
+        END FOR
+
+        IF minimum > hasil
+            hasil ← minimum
+        END IF
+    END FOR
+
+    RETURN hasil
+END FUNCTION
